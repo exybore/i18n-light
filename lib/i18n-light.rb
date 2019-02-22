@@ -1,8 +1,14 @@
+# i18n-light - A light implementation to add internationalization into your apps.
+#   Guide and source code : https://github.com/exybore/i18n-light
+#   Documentation : https://www.rubydoc.info/gems/i18n-light
+#
+# @author exybore
+
 # Exception to handle unknown locale
 class UnknownLocale < StandardError  
 end  
 
-# i18n class, the center of the program
+# The i18n core class
 class I18n
   
   # @return [String, Symbol] the locale selection
@@ -11,21 +17,23 @@ class I18n
   # Initialize the i18n class
   #
   # @param strings [Hash] all the strings
-  # @param fallback_locale [Strings, Symbol] the locale to use if any is set
-  # @param locale [Strings, Symbol, nil] set a locale (optional)
-  # @param warning [Boolean] enable warnings during runtime (default: false)
+  # @param fallback_locale [String, Symbol] the locale to use if any is set
+  # @param locale [String, Symbol] set a locale
+  # @param warning [Boolean] enable warnings during runtime
   def initialize strings, fallback_locale, locale = nil, warnings = false
     @warnings = warnings
     @strings = strings
     @fallback_locale = fallback_locale
   end
   
-  # Get a string in the configured locale
+  # Get a string in the selected locale
   #
   # @param key [String, Symbol] key of the string to return
-  # @param subkey [String, Symbol, nil] subkey for categories (optional)
-  # @param params [Hash, nil] params for formatting
-  # @return the requested key
+  # @param subkey [String, Symbol] sub-key for categories
+  # @param params [Hash] parameters for formatting
+  #
+  # @raise [UnknownLocale] if the selected locale is unknown
+  # @return the requested string
   def t key, subkey = nil, params = {}
     
     # locale selection
