@@ -17,6 +17,8 @@
 - [🔐 License](#-license)
 
 ## 🔧 Setup
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fexybore%2Fi18n-light.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Fexybore%2Fi18n-light?ref=badge_shield)
+
 
 ### Quick installation
 
@@ -185,3 +187,6 @@ puts i18n.t(:user, nil, {
 ## 🔐 License
 
 The i18n-light library is under the MIT license. See the [license file](LICENSE) for further informations.
+
+
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Fexybore%2Fi18n-light.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Fexybore%2Fi18n-light?ref=badge_large)
